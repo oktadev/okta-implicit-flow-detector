@@ -19,8 +19,8 @@ function removeExistingOffenses() {
 function json_tree(data, isNested) {
   var json = (isNested) ? '<ul class="nested">' : '<ul class="offenses" id="myUL">';
 
-  for(var i = 0; i < data.length; ++i) {
-    if(data[i].data.length) {
+  for (var i = 0; i < data.length; ++i) {
+    if (data[i].data.length) {
       json += '<li><span class="' + ((data[i].caret)?data[i].caret:'caret') + '">' + data[i].text + '</span>';
       json += json_tree(data[i].data, true);
     } else {
@@ -39,7 +39,7 @@ function addTokenData(name, caret, tokenData, datum) {
     datum.data[idx].data.push({text: 'token claims', data: []})
     datum.data[idx].data[1].data.push({text: '<pre>' + JSON.stringify(tokenData.claims,2) + '</pre>', data: []});
   } else {
-    datum.data.push({text: name, data: [{text: tokenData.token, data: []}, caret]})
+    datum.data.push({text: name, data: [{text: tokenData.token, data: []}], caret: caret})
   }
 }
 
