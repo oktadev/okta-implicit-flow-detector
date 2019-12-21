@@ -4,7 +4,7 @@ This browser extension detects websites that use the implicit flow. It does this
 
 It works on both Firefox and Chrome. It should work on chromium variants. It doesn't work on Safari.
 
-Currently, it just shows an unordered list of sites that it detected the implicit flow on.
+If the implicit flow is detected, the site url will be added to a tree view in the extension popup. Expanding that tree shows you the token contents. It also shows a yellow indicator for the presence of an id token and a red indicator for the presence of an access token.
 
 The code is vanilla javascript. There is one dependency: `browser-polyfill.js`, which makes chrome adhere to the standard for browser extensions that mozilla has proposed. This enables it to be a single codebase that works in both chrome and firefox.
 
@@ -37,9 +37,8 @@ To see it in action:
 ### Next Steps
 
 * cleanup iconography and style
-* show the raw tokens in popup
-    * some sort of expandable tree interface
-* show "yellow alert" icon if *only* id token is detected
-* show "red alert" icons if access token is detected
-* if token(s) are jwts, show claims
-    * some sort of expandable tree interface
+* ~~show the raw tokens in popup~~
+* ~~show "yellow alert" icon if *only* id token is detected~~
+* ~~show "red alert" icons if access token is detected~~
+* ~~if token(s) are jwts, show claims~~
+* pretty print claims if present
