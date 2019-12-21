@@ -30,13 +30,16 @@ To see it in action:
 4. Notice that the extension icon changes from white to blue to indicate that an implicit flow has been detected
 5. Click the blue hash icon and you'll see `https://okta-oidc-fun.herokuapp.com` in the list
 
+![implicit detector](implicit-detector.gif)
+
 **NOTE**: This has also been tested with the implicit flow from the playground section of oauth.com. it *should* work with any site that uses the implicit flow.
 
 ### Next Steps
 
 * cleanup iconography and style
-* show the raw tokens and the parsed claims in popup
+* show the raw tokens in popup
     * some sort of expandable tree interface
 * show "yellow alert" icon if *only* id token is detected
 * show "red alert" icons if access token is detected
 * if token(s) are jwts, show claims
+    * some sort of expandable tree interface
