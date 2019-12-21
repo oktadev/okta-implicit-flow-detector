@@ -18,15 +18,15 @@ function removeExistingOffenses() {
 
 function refreshExistingOffenses(backgroundPage) {
   removeExistingOffenses();
-  let newDiv = document.createElement("ul");
-  newDiv.className = "offenses";
+  let ul = document.createElement("ul");
+  ul.className = "offenses";
   const keys = Object.keys(backgroundPage.offenses);
   for (const key of keys) {
     let li = document.createElement("li");
     li.innerHTML = key;
-    newDiv.appendChild(li);
+    ul.appendChild(li);
   }
-  document.querySelector('#sites').appendChild(newDiv);
+  document.querySelector('#sites').appendChild(ul);
 }
 
 browser.runtime.getBackgroundPage().then(refreshExistingOffenses);
