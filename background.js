@@ -28,10 +28,16 @@ function parseUrl(urlStr) {
 }
 
 function parseClaims(tokenStr) {
-  if ((tokenStr.match(/\./g) || []).length !== 2) {
-    return undefined;
+  let ret = undefined;
+  if ((tokenStr.match(/\./g) || []).length === 2) {
+    try {
+      ret = JSON.parse(atob(tokenStr.substring(tokenStr.indexOf('.')+1, tokenStr.lastIndexOf('.'))));
+    } catch (error) {
+      // in case there's two dots in the access token, but it's NOT a jwt
+      console.log(error);
+    }
   }
-  return JSON.parse(atob(tokenStr.substring(tokenStr.indexOf('.')+1, tokenStr.lastIndexOf('.'))));
+  return ret;
 }
 
 function setIcon() {
