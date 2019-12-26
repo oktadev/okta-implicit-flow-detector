@@ -37,7 +37,7 @@ function addTokenData(name, caret, tokenData, datum) {
     datum.data.push({text: name, data: [{text: 'token value', data: []}], caret: caret})
     datum.data[idx].data[0].data.push({text: tokenData.token, data: []})
     datum.data[idx].data.push({text: 'token claims', data: []})
-    datum.data[idx].data[1].data.push({text: '<pre>' + JSON.stringify(tokenData.claims,2) + '</pre>', data: []});
+    datum.data[idx].data[1].data.push({text: '<pre>' + JSON.stringify(tokenData.claims, null, 2) + '</pre>', data: []});
   } else {
     datum.data.push({text: name, data: [{text: tokenData.token, data: []}], caret: caret})
   }
