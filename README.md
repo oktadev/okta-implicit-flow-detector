@@ -25,7 +25,7 @@ web-ext run -t chromium -t firefox-desktop
 To see it in action:
 
 1. The icon for the extension is a white hash symbol. Navigate to: [https://okta-oidc-fun.herokuapp.com](https://okta-oidc-fun.herokuapp.com)
-2. Uncheck `code` and check `id token` and `access token`
+2. Uncheck **code** and check **id token** and **access token**
 3. Click the link the at the bottom of the page
 4. Notice that the extension icon changes from white to blue to indicate that an implicit flow has been detected
 5. Click the blue hash icon and you'll see `https://okta-oidc-fun.herokuapp.com` in the list
@@ -39,7 +39,7 @@ To see it in action:
 The following urls use the implicit flow and will result information showing in the browser extension:
 
 * https://okta-oidc-fun.herokuapp.com
-    * make sure **access** token and/or **id token** are checked
+    * make sure **access token** and/or **id token** are checked
 * https://www.oauth.com/playground/implicit.html
 * https://medium.com/@nilasini/real-world-example-to-understand-oidc-implicit-flow-ecdf1b1d0156
     * login with google
