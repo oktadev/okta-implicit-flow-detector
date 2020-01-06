@@ -34,6 +34,16 @@ To see it in action:
 
 **NOTE**: This has also been tested with the implicit flow from the playground section of oauth.com. it *should* work with any site that uses the implicit flow.
 
+### Good sites for testing
+
+The following urls use the implicit flow and will result information showing in the browser extension:
+
+* https://okta-oidc-fun.herokuapp.com
+    * make sure **access** token and/or **id token** are checked
+* https://www.oauth.com/playground/implicit.html
+* https://medium.com/@nilasini/real-world-example-to-understand-oidc-implicit-flow-ecdf1b1d0156
+    * login with google
+
 ### Next Steps
 
 * cleanup iconography and style
