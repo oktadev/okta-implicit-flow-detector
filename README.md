@@ -41,4 +41,4 @@ To see it in action:
 * ~~show "yellow alert" icon if *only* id token is detected~~
 * ~~show "red alert" icons if access token is detected~~
 * ~~if token(s) are jwts, show claims~~
-* pretty print claims if present
+* ~~pretty print claims if present~~
