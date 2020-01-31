@@ -20,10 +20,10 @@
     ]
   },
   "browser_action": {
-    "default_icon": "icons/hash-white-32.png",
+    "default_icon": "icons/hash-green-32.png",
     "theme_icons": [{
-        "light": "icons/hash-white-32.png",
-        "dark": "icons/hash-blue-32.png",
+        "light": "icons/hash-green-32.png",
+        "dark": "icons/hash-red-32.png",
         "size": 32
     }],
     "default_title": "Implicit Offenses",

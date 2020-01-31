@@ -41,9 +41,9 @@ function parseClaims(tokenStr) {
 }
 
 function setIcon() {
-  var options = {path: 'icons/hash-white-32.png'};
+  var options = {path: 'icons/hash-green-32.png'};
   if (Object.keys(offenses).length) {
-    options.path = 'icons/hash-blue-32.png'
+    options.path = 'icons/hash-red-32.png'
   }
   browser.browserAction.setIcon(options);
 }
