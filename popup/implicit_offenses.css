@@ -71,3 +71,7 @@ ul, #myUL {
 .active {
   display: block;
 }
+
+.scroll {
+  overflow-x: scroll;
+}

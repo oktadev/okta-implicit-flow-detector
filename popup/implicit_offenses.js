@@ -16,13 +16,13 @@ function removeExistingOffenses() {
   }
 }
 
-function json_tree(data, isNested) {
-  var json = (isNested) ? '<ul class="nested">' : '<ul class="offenses" id="myUL">';
+function jsonTree(data, isNested) {
+  var json = (isNested) ? '<ul class="nested scroll">' : '<ul class="offenses" id="myUL">';
 
   for (var i = 0; i < data.length; ++i) {
     if (data[i].data.length) {
       json += '<li><span class="' + ((data[i].caret)?data[i].caret:'caret') + '">' + data[i].text + '</span>';
-      json += json_tree(data[i].data, true);
+      json += jsonTree(data[i].data, true);
     } else {
       json += '<li>' + data[i].text;
     }
@@ -73,7 +73,7 @@ function setupToggler() {
 function refreshExistingOffenses(backgroundPage) {
   removeExistingOffenses();
   var data = transformOffenses(backgroundPage.offenses);
-  document.querySelector('#sites').innerHTML = json_tree(data, false);
+  document.querySelector('#sites').innerHTML = jsonTree(data, false);
   setupToggler();
 }
 

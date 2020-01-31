@@ -32,7 +32,13 @@ To see it in action:
 
 ![implicit detector](implicit-detector.gif)
 
-**NOTE**: This has also been tested with the implicit flow from the playground section of oauth.com. it *should* work with any site that uses the implicit flow.
+Bonus:
+
+You can see additional sites added to the implicit flow detector by going to: [OAuth.com Implicit Flow playground](https://www.oauth.com/playground/implicit.html) and/or [Medium post on Implicit Flow](https://medium.com/@nilasini/real-world-example-to-understand-oidc-implicit-flow-ecdf1b1d0156). 
+
+
+
+**NOTE**: If you do the medium.com example, you'll see that they use an opaque access token and a JWT ID Token. The browser add-on represents these accordingly. It *should* work with any site that uses the implicit flow.
 
 ### Good sites for testing
 
