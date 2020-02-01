@@ -19,19 +19,33 @@ function removeExistingOffenses() {
   }
 }
 
-function jsonTree(data, isNested) {
-  var json = (isNested) ? '<ul class="nested scroll">' : '<ul class="offenses" id="myUL">';
+function jsonToElement(elem, data) {
+  var list = document.createElement('ul');
+  if (elem) {
+    elem.appendChild(list);
+    list.classList.add('nested', 'scroll');
+  } else {
+    list.classList.add('offenses');
+    list.id = 'myUL';
+  }
 
   for (var i = 0; i < data.length; ++i) {
+    var li = document.createElement('li');
+    list.appendChild(li);
     if (data[i].data.length) {
-      json += '<li><span class="' + ((data[i].caret)?data[i].caret:'caret') + '">' + data[i].text + '</span>';
-      json += jsonTree(data[i].data, true);
+      var span = document.createElement('span');
+      span.classList.add((data[i].caret)?data[i].caret:'caret');
+      span.textContent = data[i].text;
+      li.appendChild(span);
+      jsonToElement(li, data[i].data);
     } else {
-      json += '<li>' + data[i].text;
+      var pre = document.createElement('pre');
+      pre.textContent = data[i].text;
+      li.appendChild(pre);
     }
-    json += '</li>';
   }
-  return json + '</ul>';
+
+  return list;
 }
 
 function addTokenData(name, caret, tokenData, datum) {
@@ -40,7 +54,7 @@ function addTokenData(name, caret, tokenData, datum) {
     datum.data.push({text: name, data: [{text: 'token value', data: []}], caret: caret})
     datum.data[idx].data[0].data.push({text: tokenData.token, data: []})
     datum.data[idx].data.push({text: 'token claims', data: []})
-    datum.data[idx].data[1].data.push({text: '<pre>' + JSON.stringify(tokenData.claims, null, 2) + '</pre>', data: []});
+    datum.data[idx].data[1].data.push({text: JSON.stringify(tokenData.claims, null, 2), data: []});
   } else {
     datum.data.push({text: name, data: [{text: tokenData.token, data: []}], caret: caret})
   }
@@ -76,7 +90,11 @@ function setupToggler() {
 function refreshExistingOffenses(backgroundPage) {
   removeExistingOffenses();
   var data = transformOffenses(backgroundPage.offenses);
-  document.querySelector('#sites').innerHTML = jsonTree(data, false);
+  var sites = document.querySelector('#sites');
+  if (sites.childNodes.length > 0) {
+    sites.removeChild(sites.childNodes[0]);
+  }
+  sites.appendChild(jsonToElement(null, data));
   if (data.length) {
     show(document.querySelector('.reset'));
     show(document.querySelector('.some-offenses'));
