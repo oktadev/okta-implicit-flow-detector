@@ -10,6 +10,9 @@ function listenForClicks() {
 }
 
 function removeExistingOffenses() {
+  hide(document.querySelector('.reset'));
+  hide(document.querySelector('.some-offenses'));
+  show(document.querySelector('.no-offenses'));
   var offenses = document.querySelector('.offenses');
   if (offenses) {
     offenses.remove();
@@ -74,8 +77,21 @@ function refreshExistingOffenses(backgroundPage) {
   removeExistingOffenses();
   var data = transformOffenses(backgroundPage.offenses);
   document.querySelector('#sites').innerHTML = jsonTree(data, false);
+  if (data.length) {
+    show(document.querySelector('.reset'));
+    show(document.querySelector('.some-offenses'));
+    hide(document.querySelector('.no-offenses'));
+  }
   setupToggler();
 }
+
+var show = function (elem) {
+  elem.style.display = 'block';
+};
+
+var hide = function (elem) {
+  elem.style.display = 'none';
+};
 
 browser.runtime.getBackgroundPage().then(refreshExistingOffenses);
 listenForClicks();

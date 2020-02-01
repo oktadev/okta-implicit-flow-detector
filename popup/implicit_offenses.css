@@ -1,6 +1,16 @@
 html, body {
   width: 400px;
+  font-size: 90%;
+  margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 4px;
+}
+
+.a-no-underline {
+  text-decoration: none;
 }
 
 .button {
