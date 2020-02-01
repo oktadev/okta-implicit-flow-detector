@@ -22,6 +22,20 @@ Launch firefox and chrome to test:
 web-ext run -t chromium -t firefox-desktop
 ```
 
+### Install in Browsers
+
+The extension will soon be available as a beta on [Firefox Add-Ons](https://addons.mozilla.org) and in the [Google Chrome web store](https://chrome.google.com/webstore/category/extensions).
+
+For now, you can install it locally by following these instructions:
+
+#### Firefox
+
+Click the hamburger menu in the upper right. Select **Add-ons**. Click the gear icon. Select **Debug Add-ons**. Click **Load Temporary Add-on...**. Select the **implicit-flow-detector-0.1.zip** file.
+
+#### Chrome
+
+Click the vertical three dots in the upper right. Select **More tools > Extensions**. Click the **Developer mode** slider mode in the upper right. Click the **Load unpacked** button. Select the folder this README is in.
+
 To see it in action:
 
 1. The icon for the extension is a white hash symbol. Navigate to: [https://okta-oidc-fun.herokuapp.com](https://okta-oidc-fun.herokuapp.com)
