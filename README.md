@@ -36,21 +36,19 @@ Click the hamburger menu in the upper right. Select **Add-ons**. Click the gear 
 
 Click the vertical three dots in the upper right. Select **More tools > Extensions**. Click the **Developer mode** slider mode in the upper right. Click the **Load unpacked** button. Select the folder this README is in.
 
-To see it in action:
+### See it in Action
 
-1. The icon for the extension is a white hash symbol. Navigate to: [https://okta-oidc-fun.herokuapp.com](https://okta-oidc-fun.herokuapp.com)
+1. The icon for the extension is a green hash symbol. Navigate to: [https://okta-oidc-fun.herokuapp.com](https://okta-oidc-fun.herokuapp.com)
 2. Uncheck **code** and check **id token** and **access token**
 3. Click the link the at the bottom of the page
-4. Notice that the extension icon changes from white to blue to indicate that an implicit flow has been detected
-5. Click the blue hash icon and you'll see `https://okta-oidc-fun.herokuapp.com` in the list
+4. Notice that the extension icon changes from green to red to indicate that an implicit flow has been detected
+5. Click the red hash icon and you'll see `https://okta-oidc-fun.herokuapp.com` in the list
 
 ![implicit detector](implicit-detector.gif)
 
 Bonus:
 
 You can see additional sites added to the implicit flow detector by going to: [OAuth.com Implicit Flow playground](https://www.oauth.com/playground/implicit.html) and/or [Medium post on Implicit Flow](https://medium.com/@nilasini/real-world-example-to-understand-oidc-implicit-flow-ecdf1b1d0156). 
-
-
 
 **NOTE**: If you do the medium.com example, you'll see that they use an opaque access token and a JWT ID Token. The browser add-on represents these accordingly. It *should* work with any site that uses the implicit flow.
 
