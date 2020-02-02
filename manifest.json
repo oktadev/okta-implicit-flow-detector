@@ -2,7 +2,7 @@
 
   "description": "Detect sites using the OAuth 2.0 implicit Flow",
   "manifest_version": 2,
-  "name": "implicit-flow-detector",
+  "name": "OAuth 2.0 Implicit Flow Detector",
   "version": "0.1",
   "homepage_url": "https://github.com/oktadeveloper/okta-implicit-flow-detector",
   "icons": {
