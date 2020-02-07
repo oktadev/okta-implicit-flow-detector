@@ -6,7 +6,11 @@
   "version": "0.1",
   "homepage_url": "https://github.com/oktadeveloper/okta-implicit-flow-detector",
   "icons": {
-    "48": "logo.png"
+    "16": "icons/hash-default-16.png",
+    "32": "icons/hash-default-32.png",
+    "48": "icons/hash-default-48.png",
+    "64": "icons/hash-default-64.png",
+    "128": "icons/hash-default-128.png"
   },
 
   "permissions": [
@@ -20,12 +24,13 @@
     ]
   },
   "browser_action": {
-    "default_icon": "icons/hash-green-32.png",
-    "theme_icons": [{
-        "light": "icons/hash-green-32.png",
-        "dark": "icons/hash-red-32.png",
-        "size": 32
-    }],
+    "default_icon": {
+      "16": "icons/hash-default-16.png",
+      "32": "icons/hash-default-32.png",
+      "48": "icons/hash-default-48.png",
+      "64": "icons/hash-default-64.png",
+      "128": "icons/hash-default-128.png"
+    },
     "default_title": "Implicit Offenses",
     "default_popup": "popup/implicit_offenses.html"
   }
