@@ -1,5 +1,10 @@
 ## Implicit Flow Detector
 
+`TL;DR`: This browser extension is now available in both the Google Chrome Webstore and the Firefox Addons.
+
+* [http://bit.ly/ImplicitFlowDetectorChrome](http://bit.ly/ImplicitFlowDetectorChrome)
+* [http://bit.ly/ImplicitFlowDetectorFirefox](http://bit.ly/ImplicitFlowDetectorFirefox)
+
 This browser extension detects websites that use the implicit flow. It does this by scanning urls and looking for `id_token` and/or `access_token` in the url.
 
 It works on both Firefox and Chrome. It should work on chromium variants. It doesn't work on Safari.
