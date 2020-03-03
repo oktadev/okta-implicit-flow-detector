@@ -41,9 +41,19 @@ function parseClaims(tokenStr) {
 }
 
 function setIcon() {
-  var options = {path: 'icons/hash-green-32.png'};
+  var options = {
+    path: {
+      '16': 'icons/hash-default-16.png',
+      '32': 'icons/hash-default-32.png',
+      '64': 'icons/hash-default-64.png'
+    }
+  };
   if (Object.keys(offenses).length) {
-    options.path = 'icons/hash-red-32.png'
+    options.path = {
+      '16': 'icons/hash-warning-16.png',
+      '32': 'icons/hash-warning-32.png',
+      '64': 'icons/hash-warning-64.png'
+    }
   }
   browser.browserAction.setIcon(options);
 }

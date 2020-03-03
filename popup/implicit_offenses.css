@@ -2,31 +2,40 @@ html, body {
   width: 400px;
   font-size: 90%;
   margin: 0px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, Arial, sans-serif;
 }
 
 .container {
-  margin: 4px;
+  padding: 1rem;
+}
+
+a {
+  color: #1662DD;
 }
 
 .a-no-underline {
   text-decoration: none;
 }
 
+h4 {
+  margin-top: 0;
+}
+
 .button {
-  margin: 3% auto;
-  padding: 4px;
+  margin: 1.5rem auto;
+  padding: 0.375em 1.5em;
   text-align: center;
   color: white;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .reset {
-  background-color: #027dc1;
+  background-color: #1662DD;
 }
 
 .reset:hover {
-  background-color: #0172b9;
+  background-color: #124A94;
 }
 
 ul, #myUL {
@@ -55,14 +64,14 @@ ul, #myUL {
 
 .caret-yellow::before {
   content: "\25B6";
-  color: rgb(182, 182, 29);
+  color: #BC960F;
   display: inline-block;
   margin-right: 6px;
 }
 
 .caret-red::before {
   content: "\25B6";
-  color: rgb(136, 33, 33);
+  color: #DD0744;
   display: inline-block;
   margin-right: 6px;
 }
@@ -72,9 +81,14 @@ ul, #myUL {
   transform: rotate(90deg);
 }
 
+li {
+  margin-top: 0.5rem;
+}
+
 /* Hide the nested list */
 .nested {
   display: none;
+  padding-left: 1.25rem;
 }
 
 /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
@@ -84,4 +98,10 @@ ul, #myUL {
 
 .scroll {
   overflow-x: scroll;
+}
+
+footer {
+  padding-top: 0.5rem;
+  color: #5C6971;
+  border-top: 1px solid #B7BCC0;
 }
