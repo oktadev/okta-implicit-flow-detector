@@ -29,9 +29,9 @@ web-ext run -t chromium -t firefox-desktop
 
 ### Install in Browsers
 
-The extension will soon be available as a beta on [Firefox Add-Ons](https://addons.mozilla.org) and in the [Google Chrome web store](https://chrome.google.com/webstore/category/extensions).
+The extension is available for [Google Chrome](https://chrome.google.com/webstore/detail/oauth-20-implicit-flow-de/joelnphbjjdfdifmhcpahcopabiafmbp?hl=en-US) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/implicit-flow-detector/).
 
-For now, you can install it locally by following these instructions:
+You can also install it locally by following these instructions:
 
 #### Firefox
 
@@ -67,9 +67,16 @@ The following urls use the implicit flow and will result information showing in 
 * https://medium.com/@nilasini/real-world-example-to-understand-oidc-implicit-flow-ecdf1b1d0156
     * login with google
 
+### Building for Release
+
+* run: `web-ext` build
+* go to the [google chrome dashboard](chrome.google.com/webstore/devconsole) to publish the updated version
+* go to the [firefox add-ons dashboard](https://addons.mozilla.org/en-US/developers/addons) to publish the updated version
+
 ### Next Steps
 
-* cleanup iconography and style
+* Show a badge with the number of sites detected
+* ~~cleanup iconography and style~~
 * ~~show the raw tokens in popup~~
 * ~~show "yellow alert" icon if *only* id token is detected~~
 * ~~show "red alert" icons if access token is detected~~

@@ -3,7 +3,7 @@
   "description": "Detect sites using the OAuth 2.0 implicit Flow",
   "manifest_version": 2,
   "name": "OAuth 2.0 Implicit Flow Detector",
-  "version": "0.1",
+  "version": "0.2",
   "homepage_url": "https://github.com/oktadeveloper/okta-implicit-flow-detector",
   "icons": {
     "48": "logo.png"
@@ -20,9 +20,9 @@
     ]
   },
   "browser_action": {
-    "default_icon": "icons/hash-green-32.png",
+    "default_icon": "icons/hash-blue-32.png",
     "theme_icons": [{
-        "light": "icons/hash-green-32.png",
+        "light": "icons/hash-blue-32.png",
         "dark": "icons/hash-red-32.png",
         "size": 32
     }],
