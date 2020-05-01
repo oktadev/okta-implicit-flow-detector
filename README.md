@@ -43,10 +43,10 @@ Click the vertical three dots in the upper right. Select **More tools > Extensio
 
 ### See it in Action
 
-1. The icon for the extension is a green hash symbol. Navigate to: [https://okta-oidc-fun.herokuapp.com](https://okta-oidc-fun.herokuapp.com)
+1. The icon for the extension is a blue hash symbol. Navigate to: [https://okta-oidc-fun.herokuapp.com](https://okta-oidc-fun.herokuapp.com)
 2. Uncheck **code** and check **id token** and **access token**
 3. Click the link the at the bottom of the page
-4. Notice that the extension icon changes from green to red to indicate that an implicit flow has been detected
+4. Notice that the extension icon changes from blue to red to indicate that an implicit flow has been detected
 5. Click the red hash icon and you'll see `https://okta-oidc-fun.herokuapp.com` in the list
 
 ![implicit detector](implicit-detector.gif)

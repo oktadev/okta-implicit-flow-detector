@@ -3,16 +3,17 @@
   "description": "Detect sites using the OAuth 2.0 implicit Flow",
   "manifest_version": 2,
   "name": "OAuth 2.0 Implicit Flow Detector",
-  "version": "0.2",
+  "version": "0.1.3",
   "homepage_url": "https://github.com/oktadeveloper/okta-implicit-flow-detector",
   "icons": {
-    "48": "logo.png"
+    "16": "icons/icon-blue-16.png",
+    "32": "icons/icon-blue-32.png",
+    "48": "icons/icon-blue-48.png",
+    "128": "icons/icon-blue-128.png"
   },
-
   "permissions": [
     "webRequest", "webRequestBlocking", "https://*/*"
   ],
-
   "background": {
     "scripts": [
       "browser-polyfill.js",
@@ -20,14 +21,13 @@
     ]
   },
   "browser_action": {
-    "default_icon": "icons/hash-blue-32.png",
+    "default_icon": "icons/icon-blue-32.png",
     "theme_icons": [{
-        "light": "icons/hash-blue-32.png",
-        "dark": "icons/hash-red-32.png",
+        "light": "icons/icon-blue-32.png",
+        "dark": "icons/icon-blue-32.png",
         "size": 32
     }],
     "default_title": "Implicit Offenses",
     "default_popup": "popup/implicit_offenses.html"
   }
-
 }

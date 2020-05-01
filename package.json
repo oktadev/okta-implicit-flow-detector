@@ -1,0 +1,36 @@
+{
+  "name": "implicit-flow-detector",
+  "version": "0.1.3",
+  "description": "A Browser extension to detect sites that use the deprecated OAuth 2.0 Implicit Flow",
+  "scripts": {
+    "build": "web-ext build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oktadeveloper/okta-implicit-flow-detector.git"
+  },
+  "keywords": [
+    "oauth2",
+    "implicit-flow",
+    "security"
+  ],
+  "author": "Micah Silverman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oktadeveloper/okta-implicit-flow-detector/issues"
+  },
+  "homepage": "https://github.com/oktadeveloper/okta-implicit-flow-detector#readme",
+  "webExt": {
+    "verbose": true,
+    "build": {
+      "overwriteDest": true
+    },
+    "ignoreFiles": [
+      "package.json",
+      "README.md",
+      "implicit-detector.gif",
+      "test.background.js",
+      "mocha.tests.html"
+    ]
+  }
+}
