@@ -1,4 +1,35 @@
 // mocked browser defined in mocha.tests.html to avoid console errors
+describe('parse weird urls', function () {
+    let mediumUrlStr = 'https://medium.com/m/callback/facebook?#access_token=abcde&data_access_expiration_time=1604336229&expires_in=3771&state=%7Chttps%3A%2F%2Fmedium.com%2F%3Fsource%3Dlogin--------------------------landing_home_nav-%7Clogin%7C16ad7596e1db5a1cbfcabd41e0c7791b%7Cda69f530e6c45f9c2ceb2e3ad64e70318f15b6872a9e825ac1c294e303f20478';
+    let accessTokenFirst = 'https://medium.com/m/callback/facebook?#access_token=abcde&id_token=fghijk'
+    let noAccesstoken = 'https://medium.com/m/callback/facebook?#id_token=fghijk'
+    
+    it('properly finds access_token in a weird url', () => {
+        let accessToken = findToken(mediumUrlStr, 'access_token');
+        expect(accessToken).to.eql('abcde');
+    });
+
+    it('properly finds an id token at the end', () => {
+        let idToken = findToken(accessTokenFirst, 'id_token');
+        expect(idToken).to.eql('fghijk');
+    });
+
+    it('properly finds an id token and no access token', () => {
+        let accessToken = findToken(noAccesstoken, 'access_token');
+        let idToken = findToken(noAccesstoken, 'id_token');
+        expect(accessToken).to.be(null);
+        expect(idToken).to.eql('fghijk');
+    });
+
+    it('properly identifes the origin', () => {
+        parseUrl(mediumUrlStr);
+        expect(Object.keys(offenses).length).to.be(1);
+        let offense = offenses['https://medium.com'];
+        expect(offense.accessToken.token).to.eql('abcde');
+        expect(offense.accessToken.claims).to.be(undefined);
+        expect(offense.idToken).to.be(undefined);
+    });
+});
 describe('Parseing urls, looking for implicit flow', function () {
 
     let accessTokenJwt = 'eyJraWQiOiI5ckxfUzN2NkVGSThLUFhmalJiU2F1M0xmSjRmVHFXaWJOdFVLWkEzU28wIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnB6ZDJXdXY3S3NicE5YQmlaM2FqQWRscDJjQkJHeVliSjBseXhtMnBYdGMiLCJpc3MiOiJodHRwczovL21pY2FoLm9rdGEuY29tL29hdXRoMi9hdXMyeXJjejdhTXJtREFLWjF0NyIsImF1ZCI6Im9rdGEtb2lkYy1mdW4iLCJpYXQiOjE1NzcxMTQ3NjMsImV4cCI6MTU3NzIwMTE2MywiY2lkIjoiMG9hMnlyYmYzNVZjYm9tNDkxdDciLCJ1aWQiOiIwMHUyeXVsdXA0ZVdiT3R0ZDF0NyIsInNjcCI6WyJvcGVuaWQiXSwic3ViIjoib2t0YV9vaWRjX2Z1bkBva3RhLmNvbSIsImdyb3VwcyI6WyJFdmVyeW9uZSIsIkFCQzEyMyIsInVzZXJzIiwiYWRtaW5zIl19.QUQLkfYJ5_x0xVz0Yrc9rZ3WSkxo3BkXsUZy6_4YJU1oFbxXLAvNpqFat8aanN_oPhXhlR2ri_Z7PxHLWHJkSlDvSvtZYk9tE8kMZaSpc9ggSulhcxdY_C2duYpsqhdPwHDYESiClIeaWfB29bW7i_UhRgGLtKDQW_zdWDYIm9oj88JVHm5FOCzE_WVIZp6PT7GyaYxInH7BaCFfkvNtuwDXGneV3yTTKKNylEfki_79oztkAMKeEa15G1cZRmX3Ey_-MU-SqtZ7MDGdBZO79FZ4c4lS0DyTIV7LUFiVM98c6IBf5u6vk4iSH7aiLSnUPtHj9QOdwVp7Iq5CrKVWqA';

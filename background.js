@@ -6,25 +6,35 @@ function reset() {
 }
 
 function parseUrl(urlStr) {
-  // cheat - replace # with ? to take advantage of searchParams
-  const url = new URL(urlStr.replace('#','?'));
-  const idToken = url.searchParams.get('id_token');
-  const accessToken = url.searchParams.get('access_token')
+  const idToken = findToken(urlStr, 'id_token');
+  const accessToken = findToken(urlStr, 'access_token')
   if (idToken || accessToken) {
-    offenses[url.origin] = {};
+    const origin = new URL(urlStr).origin;
+    offenses[origin] = {};
     if (idToken) {
-      offenses[url.origin].idToken = {
+      offenses[origin].idToken = {
         token: idToken,
         claims: parseClaims(idToken)
       }
     }
     if (accessToken) {
-      offenses[url.origin].accessToken = {
+      offenses[origin].accessToken = {
         token: accessToken,
         claims: parseClaims(accessToken)
       }
     } 
   }
+}
+
+function findToken(str, search) {
+  var begIdx = str.indexOf(search);
+  if (begIdx < 0) {
+    return null;
+  }
+  begIdx += search.length + 1
+  // account for =
+  var endIdx = str.indexOf('&', begIdx)
+  return (endIdx < 0) ? str.substring(begIdx) : str.substring(begIdx, endIdx)
 }
 
 function parseClaims(tokenStr) {
