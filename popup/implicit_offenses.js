@@ -40,6 +40,9 @@ function jsonToElement(elem, data) {
       jsonToElement(li, data[i].data);
     } else {
       var pre = document.createElement('pre');
+      if (!data[i].text.startsWith('{')) { 
+        pre.className = 'pre-long'; 
+      }
       pre.textContent = data[i].text;
       li.appendChild(pre);
     }

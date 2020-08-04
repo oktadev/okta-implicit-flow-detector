@@ -27,12 +27,12 @@ function parseUrl(urlStr) {
 }
 
 function findToken(str, search) {
+  search += '=';
   var begIdx = str.indexOf(search);
   if (begIdx < 0) {
     return null;
   }
-  begIdx += search.length + 1
-  // account for =
+  begIdx += search.length;
   var endIdx = str.indexOf('&', begIdx)
   return (endIdx < 0) ? str.substring(begIdx) : str.substring(begIdx, endIdx)
 }
