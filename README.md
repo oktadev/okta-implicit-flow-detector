@@ -70,7 +70,7 @@ The following urls use the implicit flow and will result information showing in 
 ### Building for Release
 
 * run: `web-ext` build
-* go to the [google chrome dashboard](chrome.google.com/webstore/devconsole) to publish the updated version
+* go to the [google chrome dashboard](https://chrome.google.com/webstore/devconsole) to publish the updated version
 * go to the [firefox add-ons dashboard](https://addons.mozilla.org/en-US/developers/addons) to publish the updated version
 
 ### Next Steps
